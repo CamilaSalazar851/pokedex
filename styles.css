@@ -1,23 +1,86 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Arial, sans-serif;
     text-align: center;
-    padding: 20px;
+    padding: 40px;
+    background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+    min-height: 100vh;
+    margin: 0;
+}
+
+section {
+    background: white;
+    max-width: 380px;
+    margin: 0 auto;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+    color: #333;
 }
 
 select {
-    padding: 8px;
+    padding: 10px 14px;
     margin-bottom: 20px;
+    border-radius: 8px;
+    border: 2px solid #74ebd5;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
 }
 
 #pokemon-image {
-    width: 150px;
+    width: 160px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.2));
+}
+
+#pokemon-image:hover {
+    transform: scale(1.1);
 }
 
 #pokemon-name {
     text-transform: capitalize;
+    color: #2b2d42;
+    margin: 10px 0;
+    font-size: 24px;
 }
 
 ul {
     list-style: none;
     padding: 0;
+}
+
+#pokemon-stats li {
+    background: #ffeaa7;
+    margin: 5px auto;
+    padding: 8px 12px;
+    border-radius: 20px;
+    max-width: 220px;
+    font-size: 14px;
+    text-transform: capitalize;
+}
+
+#pokemon-abilities li {
+    background: #a29bfe;
+    color: white;
+    margin: 5px auto;
+    padding: 8px 12px;
+    border-radius: 20px;
+    max-width: 220px;
+    font-size: 14px;
+    text-transform: capitalize;
+}
+
+#types {
+    margin-top: 15px;
+    font-weight: bold;
+    text-transform: capitalize;
+    color: #d63384;
+    font-size: 16px;
 }

@@ -1,6 +1,7 @@
 const POKEAPI_URL = "https://pokeapi.co/api/v2";
 const pokemonList = document.getElementById("pokemons");
-
+let types = []
+const divtypes= document.querySelector("#types")
 const loadPokemons = async () => {
     try {
         const response = await fetch(`${POKEAPI_URL}/pokemon`).then(response => response.json());
@@ -16,8 +17,17 @@ const loadPokemons = async () => {
 }
 
 loadPokemons();
-
+const pokemonImage = document.getElementById("pokemon-image");
+pokemonImage.addEventListener("mouseenter",()=>{
+    console.log(types)
+    let HTML = ""
+    for(let i=0;i<types.length;i++){
+        HTML += `${types[i].type.name} <br>`
+    }
+    divtypes.innerHTML = HTML;
+})
 const pokemonSelected = async (pokemonUrl) => {
+    divtypes.textContent=""
     try {
 
         const response = await fetch(pokemonUrl).then(response => response.json());
@@ -44,6 +54,10 @@ const pokemonSelected = async (pokemonUrl) => {
             pokemonStats.appendChild(li);
 
         })
+        console.log(response.types)
+        types = response.types
+        console.log(types)
+
     } catch (error) {
         console.error("Error fetching pokemon details:", error);
     }
